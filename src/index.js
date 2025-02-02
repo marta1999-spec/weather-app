@@ -10,7 +10,8 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let speedElement = document.querySelector("#wind-speed");
   speedElement.innerHTML = `${response.data.wind.speed}km/h`;
-  
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url} class="current-temperature-icon" />`;
 }
 
 function search(event) {
@@ -44,7 +45,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   let formattedDay = days[day];
